@@ -1,0 +1,23 @@
+.main-title{
+  font-weight: bold;
+
+}
+
+.contacts .container .contact-me{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.contacts .container .contact-me a{
+  margin-left: 30px;
+}
+.contacts .container .contact-me a i{
+  font-size: 50px;
+  color: black;
+}
+@media (max-width:767px) {
+  .contacts .container .contact-me a i{
+    font-size: 40px;
+  }
+}

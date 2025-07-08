@@ -1,0 +1,9 @@
+.about-me h1{
+  color: black;
+  font-weight: bold;
+}
+
+.about-me p{
+  font-size: 20px;
+  line-height: 1.7;
+}

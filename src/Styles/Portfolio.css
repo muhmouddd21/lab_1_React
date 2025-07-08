@@ -1,0 +1,127 @@
+.Portfolio h1{
+  color: black;
+  font-weight: bold;
+}
+
+  .Works{
+    position: relative;
+  }
+  .Works .container{
+    display: flex;
+    flex-direction: column;
+  }
+  .Works .go-down{
+
+    color: var(--main-color);
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+  }
+  .Works .go-down i{
+
+    animation: bouncing 1.5s infinite;
+  }
+  .Works .container .main-title{
+    margin-top: 50px;
+  }
+  .Works .work-content{
+    width: 100%;
+    display: flex;
+
+    background-color: var(--main-color-alt);
+    margin-bottom: 50px;
+
+  }
+  @media (max-width:767px) {
+    .Works .work-content{
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+  .Works .work-content:hover .image{
+    filter: grayscale(100%);
+  }
+  .Works .work-content .image img{
+    width: 240px;
+    height: 200px;
+  }
+  .Works .work-content .content{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10px;
+
+    position: relative;
+    overflow: hidden;
+
+  }
+  @media (max-width:767px) {
+    .Works .work-content .content{
+      flex-direction: column;
+      align-items: center;
+
+    }
+  }
+  .Works .work-content .content::before{
+    content: "";
+    position: absolute;
+    bottom:-200px;
+    right: 0;
+    height: 200px;
+    width: 2px;
+    background-color: var(--main-color);
+    transition: 0.3s ease-in-out;
+  }
+  .Works .work-content .content:hover::before{
+    bottom:0;
+    right: 0;
+  }
+
+  .Works .work-content .content .type .git{
+
+    margin-left: 20px;
+    font-size: 30px;
+    color: black;
+  }
+  .Works .work-content .content h1{
+    margin: 10px 0 10px 0;
+  }
+  @media (max-width:767px) {
+    .Works .work-content .content h1{
+      font-size: 25px;
+    }
+  }
+
+  .Works .work-content .content .type{
+
+    color: rgb(110, 118, 120);
+    font-size: 20px;
+    margin: 10px 0 10px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .Works .work-content .content .date{
+    background-color: var(--main-color);
+    width: fit-content;
+    border-radius: 9999px;
+    margin-right: 20px;
+    padding: 5px;
+    color: black;
+  }
+  .Works .work-content .content p{
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 98%;
+
+  }
+  @media (max-width:767px) {
+    .Works .work-content .content p{
+      padding: 0 20px;
+    }
+  }

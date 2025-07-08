@@ -1,0 +1,327 @@
+:root{
+--main-color: #FF6464;
+--main-color-alt:rgba(70, 83, 219, 0.2);
+--main-font-size:18px;
+--main-transition: 0.3s;
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Heebo", sans-serif;
+    background-color: white;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-title{
+  margin: 100px auto;
+  padding: 10px 20px;
+  border: 2px solid black;
+  font-size: 30px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  transition: var(--main-transition);
+}
+@media (max-width:767px) {
+  .main-title{
+    font-size: 20px;
+  }
+}
+.main-title:hover{
+  color: white;
+  border:2px white solid;
+  transition-delay: 0.5s;
+}
+.main-title::before,
+.main-title::after{
+content: "";
+width: 12px;
+height: 12px;
+background-color: var(--main-color);
+position: absolute;
+border-radius: 50%;
+
+top: 50%;
+transform: translateY(-50%);
+}
+.main-title::before{
+  left:-30px;
+}
+.main-title::after{
+  right:-30px;
+}
+.main-title:hover::before{
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after{
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+
+
+  }
+  @media (min-width:768px){
+    .container{
+        width: 750px;
+    }
+  }
+  @media (min-width:992px){
+    .container{
+        width: 970px;
+    }
+  }
+  @media (min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+  }
+
+ header{
+    position: sticky;
+    top: 0px;
+    z-index: 999;
+  }
+  header .container{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0 0 10px #EDF7FA;
+    position: relative;
+
+  }
+  @media(max-width:767px){
+    header .container {
+      width: 100%;
+      height: 60px;
+
+    }
+  }
+
+  header .container .links{
+    width: 50%;
+
+  }
+  @media(max-width:767px){
+    header .container .links{
+      width: 100%;
+    }
+  }
+  @media ((max-width:1199px) and (min-width:767px)){
+    header .container .links{
+      width: 70%;
+
+    }
+  }
+
+  header .container .links > ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+  }
+  @media(max-width:767px){
+    header .container .links > ul{
+      width: 100%;
+      flex-wrap: nowrap;
+    }
+  }
+  header .links ul > li > a{
+    font-size: 22px;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--main-transition);
+    position: relative;
+    overflow: hidden;
+  }
+  @media(max-width:767px){
+    header .links ul > li > a{
+      font-size: 15px;
+
+    }
+
+  }
+  @media ((max-width:1199px) and (min-width:767px)) {
+    header .links ul > li > a{
+      font-size: 15px;
+    }
+  }
+
+  header .links ul > li > a::before{
+    content: "";
+    width: 100%;
+    height: 4px;
+    background: var(--main-color);
+    position: absolute;
+    top: 0%;
+    left: -200px;
+    transition: var(--main-transition);
+  }
+
+  header .links ul > li > a:hover{
+    background-color: var(--main-color-alt);
+  }
+  header .links ul > li > a:hover::before{
+    left: 0;
+    background-color: var(--main-color);
+  }
+   .landing{
+    position: relative;
+  }
+  .landing::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    z-index: -1;
+
+     transform-origin: left top  ;
+
+  }
+
+
+  .landing .container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: calc(100vh - 60px);
+    padding-bottom: 120px;
+    padding: 0 100px;
+
+  }
+  @media (max-width:767px){
+    .landing .container{
+      flex-flow: column-reverse;
+      justify-content: space-evenly;
+      padding-bottom: 20px;
+      padding: 0 20px;
+    }
+  }
+  .landing .container .text{
+    flex: 1;
+
+  }
+  @media (max-width:767px) {
+    .landing .container .text{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  @media (max-width:767px) {
+    .landing .container .text p{
+      text-align: center;
+    }
+  }
+  .landing .container .text h1{
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -2px;
+    line-height: 50px;
+    margin: 0;
+  }
+  @media (max-width:767px) {
+    .landing .container .text h1{
+      max-width: 100%;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+  .landing .container .text .Resume{
+      padding: 10px;
+      width: fit-content;
+  }
+  .landing .container .text .Resume a{
+    /* margin-top: 20px; */
+    color: white;
+    text-decoration: none;
+    position: relative;
+
+    font-size: 20px;
+    font-weight: 500;
+
+  }
+  @media (max-width:767px) {
+    .landing .container .text .Resume a{
+      text-align: center;
+      font-size: 18px;
+    }
+  }
+  .landing .container .text .Resume:hover::before{
+    transform: skewY(0deg);
+    border: 1px white solid;
+
+  }
+  .landing .container .text .Resume::before{
+    position: absolute;
+    top: 0;
+    left:0;
+    content: "";
+    width: 100%;
+    height: 50px;
+    transition: 0.3s ease-in-out;
+
+    z-index: -1;
+    background-color: var(--main-color);
+  }
+
+
+  .landing .container .image img{
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(45deg, #ff7eb3, #ffb400) border-box;
+    max-width: 100%;
+    animation: up-and-down 5s linear infinite;
+  }
+  @media (max-width:767px) {
+    .landing .container .image img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      z-index: 500;
+      margin-top: 50px;
+    }
+  }
+  .landing .go-down{
+    color: var(--main-color);
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+  }
+  .landing .go-down i{
+    animation: bouncing 1.5s infinite;
+  }
