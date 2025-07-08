@@ -1,3 +1,4 @@
+import "./../Styles/Portfolio.css"
 export default function Portfolio({img3Path,img2Path,img1Path}){
     return(
         <div className="Works mt-5 bg-light container" id="Works">
@@ -30,7 +31,7 @@ export default function Portfolio({img3Path,img2Path,img1Path}){
                     </div>
                     <div className="content">
                         <h1>Front-End Development</h1>
-                        <div claclassNamess="type">
+                        <div className="type">
                             <span className="date">2025</span>
                             Twitter_Clone
                             <a className="git" href="https://github.com/muhmouddd21/Twitter_Clone" target="_blank" >
